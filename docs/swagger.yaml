@@ -14,28 +14,28 @@ definitions:
       data:
         $ref: '#/definitions/models.Todo'
       messages:
-        example: success add new todos
+        example: Success Add New Todos
         type: string
       status:
-        example: success
+        example: Success
         type: string
     type: object
   response.SuccessDelete:
     properties:
       messages:
-        example: success delete todos
+        example: Success Delete Todos
         type: string
       status:
-        example: success
+        example: Success
         type: string
     type: object
   response.SuccessUpdate:
     properties:
       messages:
-        example: success update todos
+        example: Success update todos
         type: string
       status:
-        example: success
+        example: Success
         type: string
     type: object
 host: localhost:8080
@@ -90,12 +90,6 @@ paths:
       - application/json
       description: Get Todos
       parameters:
-      - description: Todos
-        in: body
-        name: todo
-        required: true
-        schema:
-          $ref: '#/definitions/models.Todo'
       - description: ID Todo
         in: path
         name: id
@@ -111,12 +105,6 @@ paths:
       - application/json
       description: Delete Data Todos
       parameters:
-      - description: Delete
-        in: body
-        name: todo
-        required: true
-        schema:
-          $ref: '#/definitions/models.Todo'
       - description: ID Todo
         in: path
         name: id

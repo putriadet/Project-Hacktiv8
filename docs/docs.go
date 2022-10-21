@@ -85,15 +85,6 @@ const docTemplate = `{
                 "summary": "Delete Data Todos",
                 "parameters": [
                     {
-                        "description": "Delete",
-                        "name": "todo",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.Todo"
-                        }
-                    },
-                    {
                         "type": "integer",
                         "description": "ID Todo",
                         "name": "id",
@@ -161,15 +152,6 @@ const docTemplate = `{
                 "summary": "Get Data Todos",
                 "parameters": [
                     {
-                        "description": "Todos",
-                        "name": "todo",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.Todo"
-                        }
-                    },
-                    {
                         "type": "integer",
                         "description": "ID Todo",
                         "name": "id",
@@ -204,11 +186,11 @@ const docTemplate = `{
                 },
                 "messages": {
                     "type": "string",
-                    "example": "success add new todos"
+                    "example": "Success Add New Todos"
                 },
                 "status": {
                     "type": "string",
-                    "example": "success"
+                    "example": "Success"
                 }
             }
         },
@@ -217,11 +199,11 @@ const docTemplate = `{
             "properties": {
                 "messages": {
                     "type": "string",
-                    "example": "success delete todos"
+                    "example": "Success Delete Todos"
                 },
                 "status": {
                     "type": "string",
-                    "example": "success"
+                    "example": "Success"
                 }
             }
         },
@@ -230,11 +212,11 @@ const docTemplate = `{
             "properties": {
                 "messages": {
                     "type": "string",
-                    "example": "success update todos"
+                    "example": "Success update todos"
                 },
                 "status": {
                     "type": "string",
-                    "example": "success"
+                    "example": "Success"
                 }
             }
         }
