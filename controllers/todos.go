@@ -25,7 +25,6 @@ func GetAllTodos(c *gin.Context) {
 // @Description Get Todos
 // @Accept json
 // @Produce json
-// @Param todo body models.Todo true "Todos"
 // @Param id path int true "ID Todo"
 // @Router /todos/{id} [get]
 func GetAllTodosByID(c *gin.Context) {
@@ -108,7 +107,6 @@ func UpdateTodo(c *gin.Context) {
 // @Description Delete Data Todos
 // @Accept json
 // @Produce json
-// @Param todo body models.Todo true "Delete"
 // @Success 200 {object} response.SuccessDelete
 // @Param id path int true "ID Todo"
 // @Router /todos/delete/{id} [delete]
