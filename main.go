@@ -1,6 +1,7 @@
 package main
 
 import (
+	"FP1hacktiv8/docs"
 	"FP1hacktiv8/routes"
 	"os"
 
@@ -31,6 +32,7 @@ func main() {
 	router := gin.Default()
 	routes.TodoRouters(router)
 
+	docs.SwaggerInfo.BasePath = "/"
 	url := ginSwagger.URL(host + ":" + port + "/swagger/doc.json")
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 	router.Run(":" + port)
