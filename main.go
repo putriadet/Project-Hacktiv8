@@ -36,5 +36,8 @@ func main() {
 	url := ginSwagger.URL(host + ":" + port + "/swagger/doc.json")
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 	router.Run(":" + port)
+	
+	//router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	//router.Run(":8080")
 
 }
