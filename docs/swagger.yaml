@@ -1,0 +1,161 @@
+basePath: /
+definitions:
+  models.Todo:
+    properties:
+      description:
+        type: string
+      id:
+        type: integer
+      tolist:
+        type: string
+    type: object
+  response.SuccessCreate:
+    properties:
+      data:
+        $ref: '#/definitions/models.Todo'
+      messages:
+        example: success add new todos
+        type: string
+      status:
+        example: success
+        type: string
+    type: object
+  response.SuccessDelete:
+    properties:
+      messages:
+        example: success delete todos
+        type: string
+      status:
+        example: success
+        type: string
+    type: object
+  response.SuccessUpdate:
+    properties:
+      messages:
+        example: success update todos
+        type: string
+      status:
+        example: success
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server celler server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Hacktiv8 Final Project 1 - Group 1
+  version: "1.0"
+paths:
+  /todos:
+    get:
+      consumes:
+      - application/json
+      description: Get All Todos
+      produces:
+      - application/json
+      responses: {}
+      summary: Get All Data Todos
+    post:
+      consumes:
+      - application/json
+      description: Post New Data Todos
+      parameters:
+      - description: Todos
+        in: body
+        name: todo
+        required: true
+        schema:
+          $ref: '#/definitions/models.Todo'
+      - description: ID Todo
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.SuccessCreate'
+      summary: Post New Data Todos
+  /todos/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get Todos
+      parameters:
+      - description: Todos
+        in: body
+        name: todo
+        required: true
+        schema:
+          $ref: '#/definitions/models.Todo'
+      - description: ID Todo
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: Get Data Todos
+  /todos/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Data Todos
+      parameters:
+      - description: Delete
+        in: body
+        name: todo
+        required: true
+        schema:
+          $ref: '#/definitions/models.Todo'
+      - description: ID Todo
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.SuccessDelete'
+      summary: Delete Data Todos
+  /todos/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Edit Data Todos
+      parameters:
+      - description: Update
+        in: body
+        name: todo
+        required: true
+        schema:
+          $ref: '#/definitions/models.Todo'
+      - description: ID Todo
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.SuccessUpdate'
+      summary: Edit Data Todos
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"
